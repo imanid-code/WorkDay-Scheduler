@@ -10,12 +10,23 @@ $(document).ready(function(){
     // Set each span text to the correct hour between 9am and 5pm
     $(".Hour").each(function(i){
         $(this).text(moment().hour(i+9).format("h A"))
-        
+       //? Where is the 9 coming from .. is it because of the length of the array?
     })
     console.log(currentTime);
     
     
-    
+    //HourRow is the row where the hour is displayed. Where you add your 2-do
+    //.each?
+    //indexOf currentTime - goes through each time of the array
+    //$(`#${i}`)
+    //  $(`#saveToDo-${i}`).prop('disabled', true);
+   // $(`#saveToDo-${i}`).addClass('past');
+    //$(`#hour-${i}`).addClass('past');
+    // $('input, select, textarea').each(function() {
+        //var value = $(this).val(),
+        //name = $(this).attr('name');
+
+
     $('.HourRow').each(function(i) {
         console.log(timeArray.indexOf(currentTime));
         if (timeArray.indexOf(currentTime) > i) {
@@ -38,7 +49,8 @@ $(document).ready(function(){
     
     });
       
-      $("button").on("click", function(){
+      $("button").on("click", function(event){
+        event.preventDefault ()
           $('input, select, textarea').each(function() {
            var value = $(this).val(),
                name = $(this).attr('name');
