@@ -19,6 +19,7 @@ $(document).ready(function(){
     // var test = {...localStorage}
     // console.log(test)
     //write over and over for each time block. Change id as well 
+    // 
     var localNine = localStorage.getItem('9am-todo');
     $("#0").val(localNine)
     console.log(localNine)
