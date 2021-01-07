@@ -39,7 +39,7 @@ body {
  
   
   
-  i {
+  i:hover {
     font-size: 20px;
     
   }
@@ -51,5 +51,5 @@ body {
   }
 
   button{
-      background-color: blue;
+      background-color: yellow;
   }

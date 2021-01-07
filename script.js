@@ -10,15 +10,15 @@ $(document).ready(function(){
     // Set each span text to the correct hour between 9am and 5pm
     $(".Time").each(function(i){
         $(this).text(moment().hour(i+9).format("h A"))
-       //? Where is the 9 coming from .. is it because of the length of the array?
-       // moment functioning 
-       //.each a way to iterate over jquerry elements.every hour class set text to a time 9 as i increases by 1
+       
+       // 9 is moment functioning 
+       //.each a way to iterate over jquerry elements.every hour class set text to a time , set to 9 as i increases by 1
     })
     console.log(currentTime);
 
     
     //write over and over for each time block. Change id as well 
-    // 
+    
     var localNine = localStorage.getItem('9-2DO');
     $("#0").val(localNine)
     console.log(localNine)
@@ -47,22 +47,20 @@ $(document).ready(function(){
     $("#8").val(localFive);
     console.log(localFive);
     
-    //HourRow is the row where the hour is displayed. Where you add your 2-do
-    //.each?
-    //indexOf currentTime - goes through each time of the array
-    //$(`#${i}`) - templete  literal , way to write java script inside of a string - back tics is the same a quote but allows for templete literal
-    //  $(`#saveToDo-${i}`).prop('disabled', true); - i iterates whichever iteration we are on . prop manipulates a property inside element(id class value style)
-   // add prop disabled and set to true 
-    // $(`#saveToDo-${i}`).addClass('past');
-    //$(`#hour-${i}`).addClass('past');
-    // $('input, select, textarea').each(function() {
-        //var value = $(this).val(),
-        //name = $(this).attr('name');
+    
+    
+    
+    
+   
+   
 
-
+//Row is the row where the hour is displayed. Where you add your 2-do input
     $('.Row').each(function(i) {
+      //indexOf currentTime - goes through each time of the array, when it is the current time then ...
         if (timeArray.indexOf(currentTime) > i) {
+          //$(`#${i}`) - templete  literal , way to write java script inside of a jquerry string - back tics is the same a quote but allows for templete literal
           $(`#${i}`).addClass('past');
+          //$(`#saveToDo-${i}`).prop('disabled', true); - i iterates whichever iteration we are on . prop manipulates a property inside element(ex: id class value style) // add prop disabled and set to true 
           $(`#saveToDo-${i}`).prop('disabled', true);
           $(`#saveToDo-${i}`).addClass('past');
           $(`#time-${i}`).addClass('past');
