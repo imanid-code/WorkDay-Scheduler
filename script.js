@@ -8,7 +8,7 @@ $(document).ready(function(){
     
     
     // Set each span text to the correct hour between 9am and 5pm
-    $(".Hour").each(function(i){
+    $(".Time").each(function(i){
         $(this).text(moment().hour(i+9).format("h A"))
        //? Where is the 9 coming from .. is it because of the length of the array?
        // moment functioning 
@@ -16,35 +16,34 @@ $(document).ready(function(){
     })
     console.log(currentTime);
 
-    // var test = {...localStorage}
-    // console.log(test)
+    
     //write over and over for each time block. Change id as well 
     // 
-    var localNine = localStorage.getItem('9am-todo');
+    var localNine = localStorage.getItem('9-2DO');
     $("#0").val(localNine)
     console.log(localNine)
-    var localTen = localStorage.getItem('10am-todo');
+    var localTen = localStorage.getItem('10-2DO');
     $("#1").val(localTen)
     console.log(localTen)
-    var localElleven = localStorage.getItem('11am-todo');
+    var localElleven = localStorage.getItem('11-2DO');
     $("#2").val(localElleven);
     console.log(localElleven);
-    var localTwelve = localStorage.getItem('12pm-todo');
+    var localTwelve = localStorage.getItem('12-2DO');
     $("#3").val(localTwelve);
     console.log(localTwelve);
-    var localOne = localStorage.getItem('1pm-todo');
+    var localOne = localStorage.getItem('1-2DO');
     $("#4").val(localOne);
     console.log(localOne);
-    var localTwo = localStorage.getItem('2pm-todo');
+    var localTwo = localStorage.getItem('2-2DO');
     $("#5").val(localTwo);
     console.log(localTwo);
-    var localThree = localStorage.getItem('3pm-todo');
+    var localThree = localStorage.getItem('3-2DO');
     $("#6").val(localThree);
     console.log(localThree);
-    var localFour = localStorage.getItem('4pm-todo');
+    var localFour = localStorage.getItem('4-2DO');
     $("#7").val(localFour);
     console.log(localFour);
-    var localFive = localStorage.getItem('5pm-todo');
+    var localFive = localStorage.getItem('5-2DO');
     $("#8").val(localFive);
     console.log(localFive);
     
@@ -61,22 +60,22 @@ $(document).ready(function(){
         //name = $(this).attr('name');
 
 
-    $('.HourRow').each(function(i) {
+    $('.Row').each(function(i) {
         if (timeArray.indexOf(currentTime) > i) {
           $(`#${i}`).addClass('past');
           $(`#saveToDo-${i}`).prop('disabled', true);
           $(`#saveToDo-${i}`).addClass('past');
-          $(`#hour-${i}`).addClass('past');
+          $(`#time-${i}`).addClass('past');
         } else if (timeArray.indexOf(currentTime) == i) {
           $(`#${i}`).addClass('present');
           $(`#saveToDo-${i}`).addClass('present');
           $(`#saveToDo-${i}`).prop('disabled', false);
-          $(`#hour-${i}`).addClass('present');
+          $(`#time-${i}`).addClass('present');
         } else if (timeArray.indexOf(currentTime) < i) {
           $(`#${i}`).addClass('future');
           $(`#saveToDo-${i}`).addClass('future');
           $(`#saveToDo-${i}`).prop('disabled', false);
-          $(`#hour-${i}`).addClass('future');
+          $(`#time-${i}`).addClass('future');
         }
       });
     
